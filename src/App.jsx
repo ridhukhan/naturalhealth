@@ -29,7 +29,7 @@ const submitOrder = async  (e)=>{
   const name =e.target.name.value;
   const phone =e.target.phone.value;
   const address =e.target.address.value;
- await  axios.post("http://localhost:3000/order",{
+ await  axios.post("https://backend-5zfe.onrender.com/order",{
 
   name,
   phone,
