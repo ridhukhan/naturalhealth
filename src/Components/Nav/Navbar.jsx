@@ -6,11 +6,7 @@ const Navbar = () => {
 <nav>
 
 
-    <ul>
-        <li>order now</li>
-        <li>another product</li>
-
-    </ul>
+   <h2>NATURAL HEALTH BD</h2>
 </nav>
 
 

@@ -8,3 +8,8 @@ z-index: 1000;
 box-shadow: 4px 8px 19px black;
     height: 70px;
 }
+.Navbar h2{
+    text-align: center;
+    color: rgb(129, 76, 6);
+   
+}
