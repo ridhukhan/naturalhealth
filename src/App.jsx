@@ -1,9 +1,10 @@
-
+import { Routes,Route, useNavigate } from 'react-router-dom'
 import './App.css'
 import Navbar from './Components/Nav/Navbar'
 import saffron1 from "../src/assets/saffron1.jpeg"
 import saffron2 from "./assets/saffron2.jpeg"
 import saffron3 from "./assets/saffron3.jpeg"
+import Success from './Pages/Success'
 
 import saffron4 from "./assets/saffron4.jpeg"
 import saffron5 from "./assets/saffron5.jpg"
@@ -13,10 +14,10 @@ import saffron8 from "./assets/saffron8.jpg"
 import { useRef } from 'react'
 import axios from 'axios'
 
-function App() {
+function Home() {
   
 const formRef = useRef(null)
-
+const navigate =useNavigate()
 
 const handleorderclick=()=>{
   formRef.current.scrollIntoView({
@@ -35,16 +36,15 @@ const submitOrder = async  (e)=>{
   phone,
   address
 });
-alert("order successfully")
+e.target.reset()
+navigate("/success")
 
 }
   return (
    <div>
 
 
-
 <Navbar/>
-
 <div className='saffron1'>
 
 <img src={saffron1} alt="saffron1" />
@@ -114,7 +114,7 @@ alert("order successfully")
 <input type="text" placeholder='আপনার নাম' name='name' required/>
 <input type="text" placeholder='আপনার নাম্বার' name='phone'  required/>
 <input type="text" placeholder='জেলা থানা এলাকা' name='address'  required/>
-<button type="submit">অর্ডার কনফার্ম করুন</button>
+<button type="submit"  >অর্ডার কনফার্ম করুন</button>
 
 
 
@@ -123,8 +123,23 @@ alert("order successfully")
 
   </form>
 </div>
+
    </div>
   )
 }
 
+
+
+
+function App(){
+
+  return(
+
+    <Routes>
+
+      <Route path='/'  element={<Home/>}/>
+      <Route path='/success' element={<Success/>}/>
+    </Routes>
+  )
+}
 export default App
