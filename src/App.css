@@ -1,5 +1,6 @@
 body{
   background-color: blanchedalmond;
+  width: 100%;
 }
 
 
@@ -13,8 +14,8 @@ body{
   padding-bottom: 20%;
 }
 .saffron1 img{
-  height: 55vh;
-  margin-left: 05%;
+  height: 45vh;
+ justify-content: center;
  border: 2px solid red;
  box-shadow: 4px 8px 15px black;
 }
@@ -38,9 +39,10 @@ body{
   margin-top: 5%;
 }
 .saffron2 img{
-  height: 50vh;
+  height: 43vh;
   margin-top: 8%;
-  margin-left: 5%;
+  margin-left: 7px;
+justify-content: center;
 }
 .saffron2 ul li{
 list-style: square;
@@ -51,8 +53,8 @@ font-weight: 500;
 font-family: Impact, Haettenschweiler, 'Arial Narrow Bold', sans-serif;
 }
 .saffron4{
-  height: 70vh;
-  margin-left: 5%;
+  height: 60vh;
+  margin-left: 3%;
   border: 2px dotted palevioletred;
 }
 .saffron3{
@@ -135,7 +137,7 @@ border: 3px solid black;
   padding: 9px;
   border-radius: 14px;
 }
-.userform button{
+.userform .button1{
 
  
   margin-inline-start: 80px;
@@ -146,4 +148,26 @@ border-radius: 20px;
 background-color: rgb(236, 71, 71);
 color: aliceblue;
 box-shadow: 4px 7px 16px black;
+}
+.incb{
+  display: flex;
+  justify-content: center;
+  width: 200px;
+  background-color: rgb(88, 66, 66);
+  border: 2px dotted purple;
+  border-radius: 16px;
+  
+}
+.incb h3{
+  width: 50px;
+  text-align: center;
+  justify-content: center;
+  background: white;
+  margin-top: 19px;
+}
+.incb button{
+  height: 30px;
+  width: 50px;
+  padding: 5px;
+  margin-top: 20px;
 }

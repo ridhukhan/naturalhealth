@@ -11,11 +11,12 @@ import saffron5 from "./assets/saffron5.jpg"
 import saffron6 from "./assets/saffron6.jpg"
 import saffron7 from "./assets/saffron7.jpg"
 import saffron8 from "./assets/saffron8.jpg"
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
 import axios from 'axios'
 
 function Home() {
-  
+  const price =1400
+  const [quantity,setQuantity]=useState(1)
 const formRef = useRef(null)
 const navigate =useNavigate()
 
@@ -30,11 +31,16 @@ const submitOrder = async  (e)=>{
   const name =e.target.name.value;
   const phone =e.target.phone.value;
   const address =e.target.address.value;
+  const quantity=e.target.quantity.value;
+  const price=e.target.price.value;
+
  await  axios.post("https://backend-5zfe.onrender.com/order",{
 
   name,
   phone,
-  address
+  address,
+  quantity,
+  price
 });
 e.target.reset()
 navigate("/success")
@@ -114,7 +120,16 @@ navigate("/success")
 <input type="text" placeholder='আপনার নাম' name='name' required/>
 <input type="text" placeholder='আপনার নাম্বার' name='phone'  required/>
 <input type="text" placeholder='জেলা থানা এলাকা' name='address'  required/>
-<button type="submit"  >অর্ডার কনফার্ম করুন</button>
+
+<h2>QUANTITY:</h2>
+<div className='incb'>
+<button onClick={()=>setQuantity(quantity+1)} >+</button>
+<h3   >{quantity}</h3>
+<button    onClick={()=>setQuantity(quantity>1 ? quantity-1 : quantity)}>-</button>
+</div>
+
+<h2>PRICE:{price*quantity}</h2>
+<button type="submit"  className='button1'>অর্ডার কনফার্ম করুন</button>
 
 
 
