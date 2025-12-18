@@ -40,7 +40,7 @@ const submitOrder = async  (e)=>{
   phone,
   address,
   quantity,
-  price
+  price: price*quantity
 });
 e.target.reset()
 navigate("/success")
