@@ -31,9 +31,7 @@ const submitOrder = async  (e)=>{
   const name =e.target.name.value;
   const phone =e.target.phone.value;
   const address =e.target.address.value;
-  const quantity=e.target.quantity.value;
-  const price=e.target.price.value;
-
+  
  await  axios.post("https://backend-5zfe.onrender.com/order",{
 
   name,
