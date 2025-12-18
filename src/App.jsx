@@ -19,7 +19,7 @@ function Home() {
   const [quantity,setQuantity]=useState(1)
 const formRef = useRef(null)
 const navigate =useNavigate()
-
+const [loading,setLoading]=useState(false)
 const handleorderclick=()=>{
   formRef.current.scrollIntoView({
     behavior:"smooth"
@@ -31,7 +31,8 @@ const submitOrder = async  (e)=>{
   const name =e.target.name.value;
   const phone =e.target.phone.value;
   const address =e.target.address.value;
-  
+  try{
+    setLoading(true)
  await  axios.post("https://backend-5zfe.onrender.com/order",{
 
   name,
@@ -43,7 +44,14 @@ const submitOrder = async  (e)=>{
 e.target.reset()
 navigate("/success")
 
+
+}catch(error){
+alert('something broke')
+console.error(error)
+}finally{
+  setLoading(false)
 }
+};
   return (
    <div>
 
@@ -127,7 +135,7 @@ navigate("/success")
 </div>
 
 <h2>PRICE:{price*quantity}</h2>
-<button type="submit"  className='button1'>অর্ডার কনফার্ম করুন</button>
+<button type="submit"  className='button1' disabled={loading}>{loading? "অর্ডার প্রসেস হচ্ছে...":" অর্ডার কনফার্ম করুন"}</button>
 
 
 
