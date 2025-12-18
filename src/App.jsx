@@ -123,9 +123,9 @@ navigate("/success")
 
 <h2>QUANTITY:</h2>
 <div className='incb'>
-<button onClick={()=>setQuantity(quantity+1)} >+</button>
+<button type='button' onClick={()=>setQuantity(quantity+1)} >+</button>
 <h3   >{quantity}</h3>
-<button    onClick={()=>setQuantity(quantity>1 ? quantity-1 : quantity)}>-</button>
+<button  type='button'  onClick={()=>setQuantity(quantity>1 ? quantity-1 : quantity)}>-</button>
 </div>
 
 <h2>PRICE:{price*quantity}</h2>

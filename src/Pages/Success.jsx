@@ -3,7 +3,7 @@ import React from 'react'
 const Success = () => {
   return (
     <div>
-        <h1>ORDER COMPLEATE</h1>
+        <h1 style={{marginTop:"20%", textAlign:"center"}}>ORDER COMPLEATE</h1>
     </div>
   )
 }
